@@ -1,6 +1,10 @@
+import { useState } from "react";
+
 type Option = {
-  value: string;
-  label: string;
+  value?: string;
+  label?: string;
+  centimeter?: string;
+  inch?: string;
 };
 
 type SelectTypesProps = {
@@ -14,21 +18,22 @@ export default function CustomSelect({
   value,
   defaultValue,
 }: SelectTypesProps) {
+  const [isSelectOpen, setIsSelectOpen] = useState<boolean>(false);
   return (
-    <label className="label" htmlFor="">
-      Options
-      <select
-        defaultValue={defaultValue}
-        className="select"
-        name="selectedFruit"
-        value={value}
-      >
-        {options.map((opt, optIndex) => (
-          <option key={optIndex} value={opt.value} className="option">
-            {opt.label}
-          </option>
-        ))}
-      </select>
-    </label>
+    <div className="select">
+      <button onClick={() => setIsSelectOpen(!isSelectOpen)} className="btn">
+        {defaultValue} <span>{isSelectOpen ? "▲" : "▼"}</span>
+      </button>
+
+      {isSelectOpen && (
+        <ul className="selectFruits">
+          {options.map((opt, optIndex) => (
+            <li key={optIndex} className="option">
+              {opt.label}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }

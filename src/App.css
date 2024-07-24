@@ -20,41 +20,54 @@
 .title {
   background-color: orange;
   text-align: center;
+  padding: 5px;
 }
 
 /*SELECT*/
 .select-wrapper {
-  border: 3px solid green;
-  padding: 1rem;
-  width: 100%;
-}
-
-.label {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 3px solid green;
+  padding: 1rem;
+  width: 100%;
+  position: relative;
+}
+.select {
+  border: 2px solid red;
 }
 
-.select {
-  display: block;
-  border: 1px solid black;
+.selectButtons-container {
+  display: flex;
+}
 
+.btn {
+  display: inline-block;
   border-radius: 15px;
-  padding: 5px;
+  width: max-content;
+  padding: 6px;
+  border: 2px solid green;
+}
 
-  box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
-  min-width: 100px; /* Largeur minimale */
-  max-width: 100px; /* Largeur maximale */
+.btn:hover {
+  outline: none;
+  border-color: #ff0040;
+}
 
-  /* Pour enlever le style par défaut */
-  /* supprime la fleche collé au bord*/
-  /* appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none; */
+.selectFruits {
+  position: absolute;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin-top: 5px;
 }
 
 .option {
-  background-color: aqua;
+  padding: 10px;
+  background-color: white;
+  color: black;
+}
+.option:hover {
+  background-color: rgb(190, 190, 190);
 }
 
 /*HEADER*/

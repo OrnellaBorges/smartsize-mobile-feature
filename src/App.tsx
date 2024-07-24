@@ -4,12 +4,18 @@ import "./reset.css";
 import CustomSelect from "./components/CustomSelect";
 
 function App() {
-  const [selectedFruit, setSelectedFruit] = useState<string>("banana");
+  const [selectedFruit, setSelectedFruit] = useState<string>("Banana");
+  const [selectedUnit, setSelectedUnit] = useState<string>("CM");
 
   const options = [
     { value: "apple", label: "Apple" },
     { value: "banana", label: "Banana" },
     { value: "orange", label: "Orange" },
+  ];
+
+  const unitsOptions = [
+    { value: "cm", label: "CM" },
+    { value: "in", label: "IN" },
   ];
 
   return (
@@ -18,11 +24,19 @@ function App() {
         <header className="header">
           <h1 className="title title-1">Size Guide</h1>
           <div className="select-wrapper">
-            <CustomSelect
-              options={options}
-              value={selectedFruit}
-              defaultValue="banana"
-            />
+            <p>Options :</p>
+            <div className="selectButtons-container">
+              <CustomSelect
+                options={options}
+                value={selectedFruit}
+                defaultValue={selectedFruit}
+              />
+              <CustomSelect
+                options={unitsOptions}
+                value={selectedUnit}
+                defaultValue={selectedUnit}
+              />
+            </div>
           </div>
         </header>
       </main>
