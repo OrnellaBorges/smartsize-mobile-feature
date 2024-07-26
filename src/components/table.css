@@ -1,0 +1,50 @@
+.table-container {
+  overflow-x: scroll;
+
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 5px;
+  background-color: white;
+  margin-left: 10px;
+  position: relative;
+}
+.table-container::-webkit-scrollbar {
+  /*  display: none; */
+}
+
+table {
+  /* Fusionne les bordures des cellules */
+  border-collapse: collapse;
+  /* centre le texte */
+  text-align: center;
+  /* ajuste la taille de la table 
+    permet de retirer l'espace de merde qui reste */
+  width: 100%;
+  font-size: 0.75rem;
+}
+
+.tableBody {
+  background-color: aquamarine;
+}
+
+th,
+td {
+  border: 1px solid rgb(176, 176, 176);
+  padding: 10px 10px;
+  min-width: 100px;
+  max-width: 200px;
+
+  /* Empêche le texte de passer à la ligne */
+  white-space: nowrap;
+}
+thead td {
+  background-color: rgb(217, 217, 217);
+  font-weight: 600;
+}
+
+th {
+  background-color: rgb(217, 217, 217);
+  font-weight: 600;
+  position: sticky; /* Rend les en-têtes fixes */
+  left: 0;
+  z-index: 1; /* Assure que les en-têtes sont au-dessus des autres cellules */
+}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import "./reset.css";
 import CustomSelect from "./components/CustomSelect";
+import TableComponent from "./components/TableComponent";
 
 function App() {
   const [selectedFruit, setSelectedFruit] = useState<string>("Banana");
@@ -22,28 +23,37 @@ function App() {
 
   return (
     <div className="App">
-      <main className="main">
-        <header className="header">
-          <h1 className="title title-1">Size Guide</h1>
-          <div className="select-wrapper">
-            <p>Options :</p>
-            <div className="selectButtons-container">
-              <CustomSelect
-                options={options}
-                value={selectedFruit}
-                defaultValue={selectedFruit}
-                onChangeSelect={setSelectedFruit}
-              />
+      <header className="header">
+        <h1 className="title title-1">FEATURE SIZE GUIDE</h1>
+        <div className="select-wrapper">
+          <p>Options :</p>
+          <div className="selectButtons-container">
+            <CustomSelect
+              options={options}
+              value={selectedFruit}
+              defaultValue={selectedFruit}
+              onChangeSelect={setSelectedFruit}
+            />
 
-              <CustomSelect
-                options={unitsOptions}
-                value={selectedUnit}
-                defaultValue={selectedUnit}
-                onChangeSelect={setSelectedUnit}
-              />
-            </div>
+            <CustomSelect
+              options={unitsOptions}
+              value={selectedUnit}
+              defaultValue={selectedUnit}
+              onChangeSelect={setSelectedUnit}
+            />
           </div>
-        </header>
+        </div>
+      </header>
+      <main className="main">
+        {/* Contenu principal */}
+        <section className="section">
+          <div className="section-header">
+            <h2 className="title title-2">Mensurations</h2>
+            <p className="link-info">Comment mesurer les mensurations</p>
+          </div>
+
+          <TableComponent />
+        </section>
       </main>
     </div>
   );

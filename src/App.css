@@ -1,14 +1,10 @@
 .App {
   border: 3px solid blue;
   min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   color: black;
-}
-
-.main {
-  min-height: 100vh;
-  background-color: rgb(219, 219, 219);
 }
 
 /*HEADER*/
@@ -56,6 +52,7 @@
 
 .selectFruits {
   position: absolute;
+  z-index: 2;
   border: 1px solid black;
   box-sizing: border-box;
   margin-top: 5px;
@@ -71,3 +68,31 @@
 }
 
 /*HEADER*/
+
+/*MAIN*/
+.main {
+  flex: 1;
+  background-color: #e1e1e1;
+}
+
+.section {
+  border: 2px solid blue;
+  margin-top: 1rem;
+  background-color: white;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem;
+}
+.title-2 {
+  font-size: medium;
+}
+
+.link-info {
+  font-size: small;
+  border: 1px solid;
+  width: 50%;
+}
