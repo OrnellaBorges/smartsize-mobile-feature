@@ -3,6 +3,7 @@ import "./App.css";
 import "./reset.css";
 import CustomSelect from "./components/CustomSelect";
 import TableComponent from "./components/TableComponent";
+import TableComponent2 from "./components/TableComponent2";
 
 function App() {
   const [selectedFruit, setSelectedFruit] = useState<string>("Banana");
@@ -52,7 +53,8 @@ function App() {
             <p className="link-info">Comment mesurer les mensurations</p>
           </div>
 
-          <TableComponent />
+          {/* <TableComponent /> */}
+          <TableComponent2 />
         </section>
       </main>
     </div>

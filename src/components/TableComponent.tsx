@@ -16,6 +16,7 @@ export default function TableComponent() {
             <td>Hauteur</td>
           </tr>
         </thead>
+
         <tbody className="tableBody">
           <tr>
             <th>XS</th>
