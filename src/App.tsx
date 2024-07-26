@@ -18,6 +18,8 @@ function App() {
     { value: "in", label: "IN" },
   ];
 
+  const units = [{ cm: "CM" }, { in: "IN" }];
+
   return (
     <div className="App">
       <main className="main">
@@ -30,11 +32,14 @@ function App() {
                 options={options}
                 value={selectedFruit}
                 defaultValue={selectedFruit}
+                onChangeSelect={setSelectedFruit}
               />
+
               <CustomSelect
                 options={unitsOptions}
                 value={selectedUnit}
                 defaultValue={selectedUnit}
+                onChangeSelect={setSelectedUnit}
               />
             </div>
           </div>
